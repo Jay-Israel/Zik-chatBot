@@ -1,0 +1,38 @@
+:root{
+  --bg1: #eaf2ff; /* pale lilac/blue */
+  --bg2: #eef2ff;
+  --accent1: #6b6bff; /* blue-lilac */
+  --accent2: #9b8cff; /* lilac */
+  --white: #ffffff;
+  --glass: rgba(255,255,255,0.08);
+}
+
+*{box-sizing:border-box}
+body,html,#root{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial}
+body{background:linear-gradient(180deg,var(--bg1),#f6f9ff);display:flex;align-items:center;justify-content:center;padding:20px}
+
+.phone-shell{width:100%;max-width:420px;height:88vh;background:linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));border-radius:34px;box-shadow:0 30px 60px rgba(18,20,30,0.25), inset 0 1px 0 rgba(255,255,255,0.02);overflow:hidden;display:flex;flex-direction:column}
+.phone-header{height:64px;display:flex;align-items:center;justify-content:space-between;padding:12px 18px;background:linear-gradient(90deg,var(--accent2),var(--accent1));color:white}
+.phone-header .logo{font-weight:700;font-size:20px}
+.phone-header .status{font-size:12px;opacity:0.95}
+
+.chat-area{flex:1;overflow:auto;padding:18px;position:relative;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.00))}
+.hero-orb{display:flex;align-items:center;justify-content:center;margin-bottom:10px}
+.orb{width:110px;height:110px;border-radius:999px;background:radial-gradient(circle at 30% 30%,var(--white), rgba(255,255,255,0.6) 8%, var(--accent2) 30%, var(--accent1) 70%);box-shadow:0 10px 30px rgba(107,107,255,0.2), inset 0 -6px 18px rgba(0,0,0,0.12)}
+
+.messages{display:flex;flex-direction:column;gap:12px;padding:6px}
+.msg{display:flex}
+.msg.user{justify-content:flex-end}
+.msg.zik{justify-content:flex-start}
+.bubble{max-width:78%;padding:12px 14px;border-radius:14px;background:linear-gradient(180deg,var(--white),rgba(255,255,255,0.9));color:#0b0b0b;box-shadow:0 8px 18px rgba(10,12,30,0.08)}
+.msg.zik .bubble{background:linear-gradient(180deg,var(--accent2),var(--accent1));color:white}
+.dot-typing{letter-spacing:6px;display:inline-block;opacity:0.9}
+
+.input-bar{display:flex;gap:8px;padding:12px;border-top:1px solid rgba(255,255,255,0.03);background:linear-gradient(180deg,rgba(255,255,255,0.01),rgba(255,255,255,0.02))}
+.input-bar input{flex:1;padding:12px 14px;border-radius:12px;border:none;background:rgba(255,255,255,0.9);outline:none}
+.send-btn{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:white;border:none;padding:10px 14px;border-radius:10px;cursor:pointer}
+
+@media (max-width:480px){
+  .phone-shell{max-width:360px;border-radius:28px;height:94vh}
+  .orb{width:86px;height:86px}
+}
